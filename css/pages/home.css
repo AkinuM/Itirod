@@ -1,0 +1,8 @@
+.home-banner {
+  background-image: url(../images/doge-banner.jpg);
+  color: #fff;
+  height: 688px;
+  max-width: 1280px;
+  margin: auto; }
+  .home-banner p {
+    font-size: 24px; }
