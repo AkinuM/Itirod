@@ -84,35 +84,6 @@ signInWithEmailAndPassword(auth, email, password)
 });
 });
 // Set up our login function
-function login () {
-  // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
-
-  // Validate input fields
-  /*if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!')
-    return
-    // Don't continue running the code
-  }*/
-
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Declare user variable
-    var user = userCredential.user
-
-    // DOne
-    alert('User Logged In!!')
-
-  })
-  .catch((error) => {
-    // Firebase will use this to alert of its errors
-    var error_code = error.code
-    var error_message = error.message
-
-    alert(error_message)
-  })
-}
 
 
 
