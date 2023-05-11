@@ -21,36 +21,34 @@ const auth = getAuth(app);
 console.log(auth);
 const reg = document.getElementById("register");
 console.log(reg);
-// Set up our register function
+
 reg.addEventListener("click", (e) => {
-  console.log("boba");
-  // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
+  console.log("qwergf");
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
   console.log(email, password);
-  // Validate input fields
+
   if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!!')
     return
     // Don't continue running the code
   }
- 
-  // Move on with Auth
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Declare user variable
-    var user = userCredential.user
-    // Add this user to Firebase Database
-    alert('User Created!!')
-  })
-  .catch((error) => {
-    // Firebase will use this to alert of its errors
-    var error_code = error.code
-    var error_message = error.message
 
-    alert(error_message)
-  })
-})
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+
+      alert("user created!");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+    });
+});
+// Set up our register function
 
 // Set up our login function
 function login () {
