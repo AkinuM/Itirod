@@ -7,7 +7,9 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="pragma" content="no-cache">
     <link rel="stylesheet" href="css/global.css">
+    <script src="./js/authentication.js"></script>
     <title>Mining calculator</title>
+
   </head>
   <body>
     <header>
@@ -18,10 +20,10 @@
         <h1>Log in</h1>
         <form class="log-reg-form">
           <label>Email</label>
-          <input type="text" value="">
+          <input type="text" id="email" value="">
           <label>Password</label>
-          <input type="text" value="">
-          <input type="submit" value="Log in">
+          <input type="text" id="password" value="">
+          <input onclick="login()" type="submit" value="Log in">
         </form>
         <div class="contacts"><a class="pt-3" href="./register.html">Registration</a></div>
       </div>
