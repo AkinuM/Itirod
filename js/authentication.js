@@ -20,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 console.log(auth);
 const reg = document.getElementById("register");
+const login = document.getElementById("login");
 console.log(reg);
 
 reg.addEventListener("click", (e) => {
@@ -49,7 +50,39 @@ reg.addEventListener("click", (e) => {
     });
 });
 // Set up our register function
+login.addEventListener("click", (e) => {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
 
+  console.log(email, password);
+
+//   if (validate_email(email) == false) {
+//     alert('Email is not correct')
+//   }
+
+//   if (validate_password(pasxsword) == false) {
+//     alert('Password is not correct')
+//   }
+
+signInWithEmailAndPassword(auth, email, password)
+.then((userCredential) => {
+
+  const user = userCredential.user;
+
+
+  alert("User loged in!");
+
+  setTimeout(function () {
+    window.location.href = "index.html";
+  }, 2 * 1000);
+})
+.catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+
+  alert(errorMessage);
+});
+});
 // Set up our login function
 function login () {
   // Get all our input fields
