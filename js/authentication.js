@@ -29,11 +29,11 @@ reg.addEventListener("click", (e) => {
 
   console.log(email, password);
 
-  if (validate_email(email) == false || validate_password(password) == false) {
+  /*if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!!')
     return
     // Don't continue running the code
-  }
+  }*/
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
