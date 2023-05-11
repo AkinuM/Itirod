@@ -21,7 +21,7 @@ const auth = getAuth(app);
 console.log(auth);
 const reg = document.getElementById("register");
 const login = document.getElementById("login");
-if (reg != NULL) {
+if (reg != null) {
   registration();
 }
 console.log(reg);
