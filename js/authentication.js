@@ -21,7 +21,7 @@ const auth = getAuth();
 const database = getDatabase();
 
 // Set up our register function
-function register () {
+const register = () => {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
