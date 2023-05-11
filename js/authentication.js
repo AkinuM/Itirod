@@ -1,9 +1,9 @@
 // Your web app's Firebase configuration
 
 //import { initializeApp } from "firebase/app";
-//import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-//import { getAuth } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js';
-//import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js';
+import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js';
 
 
 var firebaseConfig = {
@@ -17,8 +17,8 @@ var firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize variables
-const auth = firebase.auth()
-const database = firebase.database()
+const auth = getAuth()
+const database = getDatabase()
 
 // Set up our register function
 function register () {
