@@ -49,7 +49,7 @@ reg.addEventListener("click", (e) => {
 
     alert(error_message)
   })
-)}
+})
 
 // Set up our login function
 function login () {
