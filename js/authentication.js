@@ -79,7 +79,7 @@ signInWithEmailAndPassword(auth, email, password)
 
   setTimeout(function () {
     window.location.href = "index.html";
-  }, 2 * 1000);
+  }, 1000);
 })
 .catch((error) => {
   const errorCode = error.code;
