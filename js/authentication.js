@@ -21,8 +21,12 @@ const auth = getAuth(app);
 console.log(auth);
 const reg = document.getElementById("register");
 const login = document.getElementById("login");
+if (reg != NULL) {
+  registration();
+}
 console.log(reg);
 
+function registration() {
 reg.addEventListener("click", (e) => {
   console.log("qwergf");
   let email = document.getElementById("email").value;
@@ -49,6 +53,7 @@ reg.addEventListener("click", (e) => {
       alert(errorMessage);
     });
 });
+}
 // Set up our register function
 login.addEventListener("click", (e) => {
   let email = document.getElementById("email").value;
