@@ -2,7 +2,7 @@
 
 //import { initializeApp } from "firebase/app";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js';
 import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js';
 
 
@@ -17,8 +17,8 @@ var firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize variables
-const auth = getAuth();
-const database = getDatabase();
+const auth = getAuth()
+const database = getDatabase()
 
 // Set up our register function
 function register () {
@@ -34,7 +34,7 @@ function register () {
   }
  
   // Move on with Auth
-  auth.createUserWithEmailAndPassword(email, password)
+  createUserWithEmailAndPassword(auth, email, password)
   .then(function() {
     // Declare user variable
     var user = auth.currentUser
@@ -75,7 +75,7 @@ function login () {
     // Don't continue running the code
   }
 
-  auth.signInWithEmailAndPassword(email, password)
+  signInWithEmailAndPassword(auth, email, password)
   .then(function() {
     // Declare user variable
     var user = auth.currentUser
@@ -122,4 +122,3 @@ function validate_password(password) {
     return true
   }
 }
-
