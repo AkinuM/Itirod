@@ -25,7 +25,7 @@ function register () {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
-
+  console.log(email, password);
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!!')
@@ -41,7 +41,7 @@ function register () {
 
     alert('User Created!!')
   })
-  .catch(function(error) {
+  .catch((error) => {
     // Firebase will use this to alert of its errors
     var error_code = error.code
     var error_message = error.message
@@ -55,7 +55,7 @@ function login () {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
-
+  console.log(email, password);
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!!')
@@ -71,7 +71,7 @@ function login () {
     alert('User Logged In!!')
 
   })
-  .catch(function(error) {
+  .catch((error) => {
     // Firebase will use this to alert of its errors
     var error_code = error.code
     var error_message = error.message
