@@ -20,9 +20,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 console.log(auth);
 const reg = document.getElementById("register");
-
+console.log(reg);
 // Set up our register function
 reg.addEventListener("click", (e) => {
+  console.log("boba");
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
