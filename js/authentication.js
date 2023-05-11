@@ -17,11 +17,12 @@ var firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize variables
-const auth = getAuth();
-const database = getDatabase();
+const auth = getAuth(app);
+console.log(auth);
+const reg = document.getElementById("register");
 
 // Set up our register function
-const register = () => {
+reg.addEventListener("click", (e) => {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
@@ -38,7 +39,7 @@ const register = () => {
   .then((userCredential) => {
     // Declare user variable
     var user = userCredential.user
-
+    // Add this user to Firebase Database
     alert('User Created!!')
   })
   .catch((error) => {
@@ -55,7 +56,7 @@ function login () {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
-  console.log(email, password);
+
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!!')
@@ -67,7 +68,8 @@ function login () {
   .then((userCredential) => {
     // Declare user variable
     var user = userCredential.user
-        
+
+    // DOne
     alert('User Logged In!!')
 
   })
