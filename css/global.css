@@ -1,8 +1,12 @@
 html, body {
-  background: #fafafa;
-  height: 91.5%; }
+  background: #fafafa; }
+ 
+main {
+  min-height: 85%;
+}
 
 header {
+  z-index: 10;	
   position: sticky;
   top: 0;
   background: white;
@@ -32,6 +36,7 @@ header .nav__logo img {
 header a {
   text-decoration: none;
   color: inherit; }
+
 
 .container:not(.is-fluid) {
   margin: 0 auto;
@@ -129,14 +134,38 @@ header a {
 
 html {
   font-family: "Roboto", "Courier New", Courier, monospace; }
+  
+body {
+  margin: 0;
+}
+
+.table__coin {
+  max-width: 100%;
+  margin-bottom: 1rem;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-spacing: 0; }
+  
+.table__coin th, .table__coin td {
+  padding: 0.65rem;
+  border-bottom: 1px solid #dee2e6;
+  text-align: center; }
+  
+.table__coin thead th {
+  border-bottom: 5px solid #dee2e6; }
+  
+.table__coin tbody .hoveriable:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.05) !important; }
 
 .table {
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 1rem;
   border-spacing: 0; }
   
 .table th, .table td {
-  padding: 0.75rem;
+  padding: 0.65rem;
   border-bottom: 1px solid #dee2e6;
   text-align: center; }
   
@@ -156,11 +185,10 @@ html {
   height: 25px; }
 
 .table--profit-table {
+ max-width: 100%;
   width: auto;
   margin-left: auto; }
   
-.table--profit-table th, .table--profit-table td {
-  padding: 1rem; }
 
 .button {
   padding: 10px 20px;

@@ -105,8 +105,7 @@ const RenderProfitTable = (filledInputs) => {
 
     filledInputs.forEach((data) => {
     	const mostProfitable = gpusProfitability[data.gpuName][0];
-        totalProfit += mostProfitable?.profit || 0 * data.quantity;
-
+        totalProfit += (mostProfitable?.profit || 0) * data.quantity;
         tbodyContainer.insertAdjacentHTML('beforeend', `
             <tr> 
                 <td>${data.gpuName}</td>
@@ -118,7 +117,7 @@ const RenderProfitTable = (filledInputs) => {
                     compactDisplay: "short",
                     currency: 'USD',
                     minimumFractionDigits: 3,
-                }).format(mostProfitable?.profit || 0 * data.quantity)}</td>
+                }).format((mostProfitable?.profit || 0) * data.quantity)}</td>
             </tr>
         `);
     });
