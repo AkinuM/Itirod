@@ -150,7 +150,9 @@ body {
 .table__coin th, .table__coin td {
   padding: 0.65rem;
   border-bottom: 1px solid #dee2e6;
-  text-align: center; }
+  text-align: center;
+  padding-left: 1.55rem;
+  padding-right: 1.55rem;}
   
 .table__coin thead th {
   border-bottom: 5px solid #dee2e6; }
